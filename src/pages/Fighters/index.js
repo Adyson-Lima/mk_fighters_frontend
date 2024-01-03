@@ -22,6 +22,16 @@ export default function Fighters(){
     }
   }
 
+  // DELETE, deleta dados na api
+  async function deleteFighter(id){
+    try {
+      await api.delete(`api/v1/fighters/${id}`,{});
+      setFighters(my_fighters.filter(fighter => fighter.id !== id));
+    } catch (error) {
+      alert('Erro ao excluir!')      
+    }
+  }
+
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
@@ -55,7 +65,7 @@ export default function Fighters(){
 
               <button data-testid="mybtn2" type="button"
               className="btn btn-outline-danger" style={{margin: '2px'}}
-              >Excluir</button>
+              onClick={() => deleteFighter(fighter.id)}>Excluir</button>
 
               </td>
           </tr>
