@@ -13,6 +13,15 @@ export default function Fighters(){
     .then(response => {setFighters(response.data)})
   },[]);
 
+  // UPDATE, atualiza dados na api
+  async function updateFighter(id){
+    try {
+      navigate(`/newupdate/${id}`);      
+    } catch (error) {
+      alert('Erro ao atualizar!')      
+    }
+  }
+
   return(
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
       <div className="card-header bg-primary" style={{color: '#fff'}}>
@@ -42,7 +51,7 @@ export default function Fighters(){
 
               <button data-testid="mybtn1" type="button"
               className="btn btn-outline-info" style={{margin: '2px'}}
-              >Editar</button>
+              onClick={() => updateFighter(fighter.id)}>Editar</button>
 
               <button data-testid="mybtn2" type="button"
               className="btn btn-outline-danger" style={{margin: '2px'}}
