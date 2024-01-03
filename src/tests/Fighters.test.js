@@ -24,4 +24,8 @@ describe("Testes da tela Fighters", () => {
     expect(screen.getByTestId('mytable')).toBeInTheDocument();
   });
 
+  it ('Existe botão editar em Fighters?', () => {
+    expect(screen.getByTestId('mybtn1')).toBeInTheDocument();
+  });
+
 });
