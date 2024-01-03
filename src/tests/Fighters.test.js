@@ -20,4 +20,8 @@ describe("Testes da tela Fighters", () => {
     expect(screen.getByTestId('mylink')).toBeInTheDocument();
   });
 
+  it ('Existe tabela em Fighters?', () => {
+    expect(screen.getByTestId('mytable')).toBeInTheDocument();
+  })
+
 });
