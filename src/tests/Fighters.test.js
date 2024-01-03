@@ -28,4 +28,8 @@ describe("Testes da tela Fighters", () => {
     expect(screen.getByTestId('mybtn1')).toBeInTheDocument();
   });
 
+  it ('Existe botão excluir em Fighters?', () => {
+    expect(screen.getByTestId('mybtn2')).toBeInTheDocument();
+  });
+
 });
