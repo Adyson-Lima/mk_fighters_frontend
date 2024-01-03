@@ -16,4 +16,8 @@ describe("Testes da tela Fighters", () => {
     expect(screen.getByTestId('mycard')).toBeInTheDocument();
   });
 
+  it ('Existe link novo em Fighters?', () =>{
+    expect(screen.getByTestId('mylink')).toBeInTheDocument();
+  });
+
 });
